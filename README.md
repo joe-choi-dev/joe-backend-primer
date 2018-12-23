@@ -7,3 +7,4 @@ Googling this one was pretty straightforward
 Ensure that your application.properties is the same on your postgres db
 
 Note: If you have an intranet, make sure thats on for the jars to download
+Boilerplate off of: https://github.com/springframeworkguru/spring-boot-postgress-example
