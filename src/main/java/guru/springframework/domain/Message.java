@@ -23,14 +23,20 @@ public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long message_id;
-    public Long user_id;
-    public String key_phrase;
-    public String title;
-    public String url;
-    public String speaker;
-    public String date;
-    public String passage;
+    private Long message_id;
+    private Long user_id;
+    private String key_phrase;
+    private String title;
+    private String url;
+    private String speaker;
+    private String date = currDate();
+    private String passage;
+
+    private String currDate() {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        return formatter.format(date);
+    }
 
     public Long getMessage_id() {
         return message_id;
@@ -92,9 +98,7 @@ public class Message {
         return this.date;
     }
 
-    public void setDate(String s) {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
-        this.date = formatter.format(date);
+    public void setDate(String date) {
+        this.date = date;
     }
 }
